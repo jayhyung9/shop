@@ -2,6 +2,7 @@
     display:flex;
     justify-content: flex-end;
     margin: 20px;
+    cursor: pointer;
 }
 
 .nav-section{
@@ -26,12 +27,6 @@
     align-items: center;
 }
 
-.search-area{
-    display: flex;
-    justify-content: flex-end;
-}
-
-
 .search-input {
    
     width: 10vh;
@@ -45,18 +40,35 @@
 
   
 .search-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    position: absolute;
+    right: 20px;
+  }
+
+  .hover-img {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .hover-img:hover {
+    transform: scale(1.04);
+  cursor: pointer;    
   }
 
   @media (max-width: 992px){
 .menu-area{
     display: block;
+
 }
+
+.menu-list li{
+    display: flex;
+    padding:1vh;
+    justify-content: center;
+}
+
+
     .search-box{
-        display: flex;
-        justify-content: center;
+        display: none;
     }
   }
 

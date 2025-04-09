@@ -1,13 +1,19 @@
 import React from 'react'
+import '../App.css'
+import { useNavigate } from 'react-router-dom'
 
-const ProductCard = () => {
+const ProductCard = ({item, authenticate}) => {
+  const navigate = useNavigate();
+  const goToDetail = () => {
+    authenticate?navigate(`product/${item?.id}`):navigate("/Login")
+  }
   return (
     <div>
-      <img src="https://image.hm.com/assets/hm/06/a0/06a0a5999a96c2a54538a1bfb8f9cbf6afb0f34d.jpg?imwidth=384"/>
-      <div>Conscious choice</div>
-      <div>벨티드 트윌 코트</div>
-      <div>99000원</div>
-      <div>신제품</div>
+      <img onClick={goToDetail} src={item?.img } style={{ width: "100%" }} className="hover-img"/>
+      <div>{item?.choice == true?"Conscious choice":""}</div>
+      <div>{item?.title}</div>
+      <div>${item?.price}</div>
+      <div>{item?.new == true?"신제품":""}</div>
     </div>
   )
 }
