@@ -3,7 +3,7 @@ import React from 'react'
 const ProductDetail = () => {
   return (
     <div>
-      상품상세페이지
+      https://my-json-server.typicode.com/jayhyung9/shop
     </div>
   )
 }
